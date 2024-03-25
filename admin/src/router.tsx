@@ -10,6 +10,12 @@ import UserPage from "./pages/user";
 import ShopPage from './pages/shop'
 import ShopCategoryPage from './pages/shop/category'
 
+import SysUserPage from './pages/sys/user'
+import SysRolePage from './pages/sys/role'
+import SysMenuPage from './pages/sys/menu'
+import SysDictPage from './pages/sys/dict'
+import SysLoginLogPage from './pages/sys/login-log'
+
 const router = createBrowserRouter([
     {
         path: '/',
@@ -40,6 +46,32 @@ const router = createBrowserRouter([
                     {
                         path: 'category',
                         element: <ShopCategoryPage />
+                    }
+                ]
+            },
+            {
+                path: 'sys',
+                element: <EmptyLayout />,
+                children: [
+                    {
+                        path: 'user',
+                        element: <SysUserPage />,
+                    },
+                    {
+                        path: 'role',
+                        element: <SysRolePage />
+                    },
+                    {
+                        path: 'menu',
+                        element: <SysMenuPage />
+                    },
+                    {
+                        path: 'dict',
+                        element: <SysDictPage />
+                    },
+                    {
+                        path: 'login-log',
+                        element: <SysLoginLogPage />
                     }
                 ]
             }

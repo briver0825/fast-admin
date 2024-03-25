@@ -2,7 +2,7 @@ import { Avatar, Button, Dropdown, Menu, message, Space } from "antd"
 import { MenuProps } from "antd/lib/menu";
 import { useEffect, useMemo, useState } from "react";
 
-import { AccountBookOutlined, DownOutlined, MenuFoldOutlined, MenuUnfoldOutlined, ShopOutlined, ShoppingOutlined, UserOutlined } from '@ant-design/icons'
+import { AccountBookOutlined, ContainerOutlined, DownOutlined, MenuFoldOutlined, MenuOutlined, MenuUnfoldOutlined, SettingOutlined, ShopOutlined, ShoppingOutlined, SolutionOutlined, TeamOutlined, UserOutlined } from '@ant-design/icons'
 import { Navigate, useLocation, useNavigate, useOutlet } from "react-router-dom";
 
 import NotFound from "@/components/NotFound";
@@ -36,6 +36,38 @@ const Sidebar: React.FC<ISidebarProps> = ({ collapsed }) => {
                     label: '商品分类',
                     key: '/shop/category',
                     icon: <AccountBookOutlined />
+                },
+            ],
+        },
+        {
+            label: '系统管理',
+            key: '/sys',
+            icon: <SettingOutlined />,
+            children: [
+                {
+                    label: '用户管理',
+                    key: '/sys/user',
+                    icon: <UserOutlined />
+                },
+                {
+                    label: '角色管理',
+                    key: '/sys/role',
+                    icon: <TeamOutlined />
+                },
+                {
+                    label: '菜单管理',
+                    key: '/sys/menu',
+                    icon: <MenuOutlined />
+                },
+                {
+                    label: '字典管理',
+                    key: '/sys/dict',
+                    icon: <ContainerOutlined />
+                },
+                {
+                    label: '登录日志',
+                    key: '/sys/login-log',
+                    icon: <SolutionOutlined />
                 },
             ],
         }
